@@ -19,11 +19,6 @@ jobs:
         node-version: [12.x]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
     steps:
-    - name: Generate token
-      uses: tibdex/github-app-token@v1
-      with:
-        app_id: 199269
-        private_key: 73d102f94c0ee5a80513ba8112db3d0a2eabddc5
     - uses: actions/checkout@v3
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v3
@@ -31,6 +26,11 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
         cache-dependency-path: ./frontend/package-lock.json
+    - name: Generate token
+        uses: tibdex/github-app-token@v1
+        with:
+          app_id: 199269
+          private_key: 73d102f94c0ee5a80513ba8112db3d0a2eabddc5
     - run: npm ci
       working-directory: ./frontend
     - run: npm run build --if-present
