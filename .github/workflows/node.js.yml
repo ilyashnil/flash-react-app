@@ -19,8 +19,8 @@ jobs:
         node-version: [12.x]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
     steps:
-    - uses: tibdex/github-app-token@v1
-        id: generate-token
+      - name: Generate token
+        uses: tibdex/github-app-token@v1
         with:
           app_id: ${{ secrets.APP_ID }}
           private_key: ${{ secrets.APP_PRIVATE_KEY }}
