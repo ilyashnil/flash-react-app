@@ -5,6 +5,8 @@ on:
     branches: [ pydevelopment ]
   pull_request:
     branches: [ main ]
+    paths:
+      - backend/**
 
 jobs:
   build:
