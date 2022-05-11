@@ -1,3 +1,5 @@
+import unittest
+
 from dice_package.dice import RollableDie
 
 
@@ -7,3 +9,6 @@ class TestDie(unittest.TestCase):
 
     def test_upper(self):
         self.assertEqual(self.die.sides, 6)
+
+    def test_upperbadly(self):
+        self.assertEqual(self.die.sides, 5)
