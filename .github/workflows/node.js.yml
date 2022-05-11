@@ -10,41 +10,41 @@ on:
     branches: [ main ]
 
 jobs:
-  build:
-
-    runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        node-version: [12.x]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
-    steps:
-
-#    - name: Generate token
-#      uses: tibdex/github-app-token@v1
+#  build:
+#
+#    runs-on: ubuntu-latest
+#
+#    strategy:
+#      matrix:
+#        node-version: [12.x]
+#        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+#    steps:
+#
+##    - name: Generate token
+##      uses: tibdex/github-app-token@v1
+##      with:
+##        app_id: ${{ secrets.APP_ID }}
+##        private_key: ${{ secrets.APP_PRIVATE_KEY }}
+#
+#    - uses: actions/checkout@v3
+#
+#    - name: Use Node.js ${{ matrix.node-version }}
+#      uses: actions/setup-node@v3
 #      with:
-#        app_id: ${{ secrets.APP_ID }}
-#        private_key: ${{ secrets.APP_PRIVATE_KEY }}
-
-    - uses: actions/checkout@v3
-
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v3
-      with:
-        node-version: ${{ matrix.node-version }}
-        cache: 'npm'
-        cache-dependency-path: ./frontend/package-lock.json
-
-    - run: npm ci
-      working-directory: ./frontend
-
-    - run: npm run build --if-present
-      working-directory: ./frontend
+#        node-version: ${{ matrix.node-version }}
+#        cache: 'npm'
+#        cache-dependency-path: ./frontend/package-lock.json
+#
+#    - run: npm ci
+#      working-directory: ./frontend
+#
+#    - run: npm run build --if-present
+#      working-directory: ./frontend
 
   createPullRequest:
     runs-on: ubuntu-latest
     steps:
-#      - uses: actions/checkout@v3
+      - uses: actions/checkout@v3
 
       - name: Make changes to pull request
         run: date +%s > report.txt
