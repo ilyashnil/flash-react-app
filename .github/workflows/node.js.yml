@@ -20,11 +20,11 @@ jobs:
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
     steps:
 
-    - name: Generate token
-      uses: tibdex/github-app-token@v1
-      with:
-        app_id: ${{ secrets.APP_ID }}
-        private_key: ${{ secrets.APP_PRIVATE_KEY }}
+#    - name: Generate token
+#      uses: tibdex/github-app-token@v1
+#      with:
+#        app_id: ${{ secrets.APP_ID }}
+#        private_key: ${{ secrets.APP_PRIVATE_KEY }}
 
     - uses: actions/checkout@v3
 
@@ -44,7 +44,7 @@ jobs:
   createPullRequest:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+#      - uses: actions/checkout@v3
 
       - name: Make changes to pull request
         run: date +%s > report.txt
@@ -53,7 +53,8 @@ jobs:
         id: cpr
         uses: peter-evans/create-pull-request@v4
         with:
-          token: ${{ steps.generate-token.outputs.token }}
+#          token: ${{ steps.generate-token.outputs.token }}
+          token: ${{ secrets.PAT }}
           commit-message: Update report
           committer: GitHub <noreply@github.com>
           author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
