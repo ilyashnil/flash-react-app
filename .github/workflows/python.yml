@@ -17,15 +17,18 @@ jobs:
       PYTHON: '3.9'
 
     steps:
+    - name: Checkout the project
+    - uses: actions/checkout@v3
+
     - name: Setup Python
       uses: actions/setup-python@master
       with:
         python-version: 3.9
+        cache: 'pip'
 
-    - uses: actions/checkout@v3
+    - name: Install Requirements
+      run: pip install -r backend/requirements.txt
 
     - name: Generate Report
-      run: |
-        pip install coverage
-        coverage run -m unittest
+      run:  coverage run -m unittest
     
