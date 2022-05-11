@@ -2,7 +2,7 @@ name: Python CI
 
 on:
   push:
-    branches: [ development ]
+    branches: [ pydevelopment ]
   pull_request:
     branches: [ main ]
 
@@ -15,12 +15,12 @@ jobs:
       PYTHON: '3.9'
 
     steps:
-    - uses: actions/checkout@v3
-
     - name: Setup Python
       uses: actions/setup-python@master
       with:
         python-version: 3.9
+
+    - uses: actions/checkout@v3
 
     - name: Generate Report
       run: |
