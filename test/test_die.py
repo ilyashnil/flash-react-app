@@ -8,4 +8,4 @@ class TestDie(unittest.TestCase):
         self.die = RollableDie()
 
     def test_upper(self):
-        self.assertEqual(self.die.sides, 6)
+        self.assertEqual(self.die.sides, 5)
