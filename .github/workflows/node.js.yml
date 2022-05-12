@@ -41,4 +41,5 @@ jobs:
 
       - name: Build static web site
         run: npm run build:development
-    
+        working-directory: ./frontend
+
