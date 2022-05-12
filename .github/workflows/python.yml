@@ -2,14 +2,14 @@ name: Python CI
 
 on:
   push:
-    branches: [ pydevelopment, main ]
+    branches: [ pydevelopment ]
   pull_request:
     branches: [ main ]
     paths:
       - backend/**
 
 jobs:
-  build:
+  pytest:
 
     runs-on: ubuntu-latest
     env:
