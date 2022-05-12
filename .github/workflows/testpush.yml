@@ -2,7 +2,7 @@ name: Push
 
 on:
   push:
-    branches: [ main ]
+    branches: [ gittest ]
 
 jobs:
   build:
@@ -15,8 +15,11 @@ jobs:
         with:
           token: ${{ secrets.PAT }}
 
+      - name: Create the directory
+        run: mkdir -p frontend/build1
+
       - name: Make changes to pull request
-        run: date +%s > report.txt
+        run: date +%s > frontend/buid1/report.txt
 
       - name: Commit changes
         uses: EndBug/add-and-commit@v8
