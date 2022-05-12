@@ -12,6 +12,7 @@ jobs:
     steps:
       - name: Checkout project
         uses: actions/checkout@v3
+        token: ${{ secrets.PAT }}
 
       - name: Make changes to pull request
         run: date +%s > report.txt
