@@ -1,8 +1,10 @@
 name: Push
 
 on:
-  pull_request:
+  push:
     branches: [ gittest ]
+    paths-ignore:
+      - frontend/build1/**
 
 jobs:
   build:
