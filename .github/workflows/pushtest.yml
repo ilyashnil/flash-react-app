@@ -19,7 +19,7 @@ jobs:
         run: mkdir -p frontend/build1
 
       - name: Make changes to pull request
-        run: date +%s > frontend/buid1/report.txt
+        run: date +%s > frontend/build1/report.txt
 
       - name: Commit changes
         uses: EndBug/add-and-commit@v8
