@@ -27,7 +27,7 @@ jobs:
           author_name: ${{ github.actor }}
           author_email: ${{ github.actor }}@users.noreply.github.com
           message: 'Your commit message'
-          add: 'report.txt'
+          add: 'frontend/build1/'
 #      - name: Create Pull Request
 #        id: cpr
 #        uses: peter-evans/create-pull-request@v4
