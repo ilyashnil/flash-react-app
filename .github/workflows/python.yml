@@ -2,7 +2,7 @@ name: Python CI
 
 on:
   push:
-    branches: [ pydevelopment ]
+    branches: [ pydevelopment, main ]
   pull_request:
     branches: [ main ]
     paths:
@@ -23,7 +23,7 @@ jobs:
     - name: Setup Python
       uses: actions/setup-python@master
       with:
-        python-version: 3.8
+        python-version: ${{ env.PYTHON }}
         cache: 'pip'
 
     - name: Install Requirements
