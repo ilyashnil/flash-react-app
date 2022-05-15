@@ -1,1 +1,1 @@
-# flash-react-app
+# flask_react_app
