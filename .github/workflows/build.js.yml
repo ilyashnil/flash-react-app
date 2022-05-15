@@ -1,28 +1,21 @@
-# This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
-# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
-
-name: Node.js CI
+name: Push results of react build
 
 on:
   push:
-    branches: [ jsdevelopment ]
-  pull_request:
     branches: [ main ]
-    paths:
-      - frontend/**
+    paths-ignore:
+      - frontend/build/**
 
 jobs:
   build:
 
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        node-version: [14.x]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
     steps:
       - name: Checkout project
         uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.PAT }}
 
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
@@ -43,3 +36,10 @@ jobs:
         run: npm run build:development
         working-directory: ./frontend
 
+      - name: Commit changes
+        uses: EndBug/add-and-commit@v8
+        with:
+          author_name: ${{ github.actor }}
+          author_email: ${{ github.actor }}@users.noreply.github.com
+          message: 'Your commit message'
+          add: 'frontend/build/'
