@@ -36,6 +36,9 @@ jobs:
         run: npm run build:development
         working-directory: ./frontend
 
+      - name: allow build folder to be added to repository
+        run: sed -i '/build/d' frontend/.gitignore
+
       - name: Commit changes
         uses: EndBug/add-and-commit@v8
         with:
