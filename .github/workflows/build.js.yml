@@ -44,5 +44,5 @@ jobs:
         with:
           author_name: ${{ github.actor }}
           author_email: ${{ github.actor }}@users.noreply.github.com
-          message: 'Your commit message'
+          message: 'Automatic react build'
           add: 'frontend/build/'
