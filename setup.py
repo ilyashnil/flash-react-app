@@ -1,11 +1,14 @@
 import setuptools
+import os
 
 with open("README.md", "r") as fh:
     long_description = fh.read()
 
+version = os.environ.get("RELEASE_VERSION", "latest")
+
 setuptools.setup(
     name="flaskreactapp",
-    version="0.0.1",
+    version=version,
     author="Ilya Shnayderman",
     author_email="ilyashn@il.ibm.com",
     description="Flask and react application",
