@@ -12,10 +12,16 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - uses: wow-actions/use-app-token@v1
+        id: generate_token
+        with:
+          app_id: ${{ secrets.APP_ID }}
+          private_key: ${{ secrets.PRIVATE_KEY }}
+
       - name: Checkout project
         uses: actions/checkout@v3
         with:
-          token: ${{ secrets.PAT }}
+          token: ${{ steps.generate_token.outputs.token }}
 
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
