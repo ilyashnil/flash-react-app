@@ -16,9 +16,9 @@ setuptools.setup(
     long_description_content_type="text/markdown",
     url="https://github.com/ilyashnil/flash-react-app",
     packages=setuptools.find_packages(),
+    license='Apache License 2.0',
     classifiers=[
         "Programming Language :: Python :: 3",
-        "License :: OSI Approved :: Apache 2 License",
         "Operating System :: OS Independent",
     ],
 )
