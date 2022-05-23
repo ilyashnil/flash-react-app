@@ -7,7 +7,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="flaskreactapp",
-    version="RELEASE_VERSION".replace('v',''),
+    version="RELEASE_VERSION",
     author="Ilya Shnayderman",
     author_email="ilyashn@il.ibm.com",
     description="Flask and react application",
