@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: flaskreactapp
+Version: latest
+Summary: Flask and react application
+Home-page: https://github.com/ilyashnil/flash-react-app
+Author: Ilya Shnayderman
+Author-email: ilyashn@il.ibm.com
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: Apache 2 License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+
+# flask_react_app
+
