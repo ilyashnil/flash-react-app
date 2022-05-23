@@ -4,7 +4,7 @@ import os
 with open("README.md", "r") as fh:
     long_description = fh.read()
 
-version = os.environ.get("RELEASE_VERSION", "latest")
+version = os.environ.get("RELEASE_VERSION", "latest1")
 
 setuptools.setup(
     name="flaskreactapp",
