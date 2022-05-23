@@ -23,4 +23,4 @@ def hello():
     return "Hello " + obj.get_suffix()
 
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True)
