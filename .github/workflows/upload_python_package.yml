@@ -30,7 +30,7 @@ jobs:
       run: sed -i s/RELEASE_VERSION/${{ env.RELEASE_VERSION }}/ setup.py
 
     - name: Install Requirements
-      run: pip install build wheel tween setuptools
+      run: pip install build wheel twine setuptools
 
     - name: Build the library
       run: python -m build --wheel
