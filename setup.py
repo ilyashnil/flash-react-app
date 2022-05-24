@@ -2,7 +2,7 @@ import setuptools
 
 resources_dir = "frontend/build"
 
-requirements_file = 'backend/requirements.txt'
+requirements_file = 'requirements.txt'
 
 # read requirements from file
 with open(requirements_file) as fh:
