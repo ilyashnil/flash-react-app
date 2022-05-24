@@ -2,8 +2,10 @@ import setuptools
 
 resources_dir = "frontend/build"
 
+requirements_file = 'backend/requirements.txt'
+
 # read requirements from file
-with open('backend/requirements.txt') as fh:
+with open(requirements_file) as fh:
     requirements = fh.read().splitlines()
 
 with open("README.md", "r") as fh:
@@ -30,6 +32,7 @@ setuptools.setup(
         "Topic :: Scientific/Engineering",
     ],
     package_data={"": ["LICENSE.txt",
+                       requirements_file,
                        f"{resources_dir}/*.css",
                        f"{resources_dir}/*.js",
                        f"{resources_dir}/*.png",
