@@ -1,5 +1,0 @@
-twine
-wheel
-setuptools
-coverage
-flask
