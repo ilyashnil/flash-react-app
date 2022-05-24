@@ -33,7 +33,7 @@ jobs:
       run: sed -i s/RELEASE_VERSION/${{ env.RELEASE_VERSION }}/ setup.py
 
     - name: Build the library
-      run: python setup.py sdist
+      run: python setup.py bdist_wheel
 
     - name: Publish package
       uses: pypa/gh-action-pypi-publish@release/v1
